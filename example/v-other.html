@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-bind</title>
+    <script src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>v-pre</h2>
+        <p v-pre>{{message}}</p>
+        <div v-cloak>渲染完成后，才显示！</div>
+        <div v-once>{{message}}</div>
+        <input type="text" v-model='message'>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                message:'123',
+
+            }
+           
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <h1>hello world</h1>
+    <br>
+    <div id="app">
+       得分：{{fenshu}}
+       <p>
+           <button v-on:click="plus">加分</button>
+           <button @click="jian">减分</button>
+           <input type="text" @keyup.enter="onEnter" v-model='fenshu2'>
+       </p>
+    </div>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                fenshu:0,
+                fenshu2:1,
+            },
+            methods:{
+                plus(){
+                    this.fenshu++;
+                },
+                jian(){
+                    this.fenshu--; 
+                },
+                onEnter(){
+                    this.fenshu = this.fenshu +  parseInt(this.fenshu2);
+                }
+
+            },
+           
+        })
+    </script>
+</body>
+</html>

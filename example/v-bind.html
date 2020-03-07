@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-bind</title>
+    <script src="../assets/js/vue.js"></script>
+    <style>
+        .classA{
+            width: 200px;
+            height: 100px;
+            background: red;
+        }
+        .classB{
+            width: 200px;
+            height: 100px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello world</h1>
+    <br>
+    <div id="app">
+      <img v-bind:src="imgsrc" width="200px" alt="">
+      <div :class='isOk ? classA : classB'></div>
+    </div>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                imgsrc:"https://i0.hdslb.com/bfs/face/e67163b55711e9d7c402341ac18ba0d88ee3b112.png",
+                isOk:false,
+                classA:"classA",
+                classB:"classB"
+
+            }
+           
+        })
+    </script>
+</body>
+</html>
